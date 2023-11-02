@@ -22,4 +22,4 @@ We suggest that you begin by typing:
  - cd easy-enroll
  - npm start
 
-Happy hacking!
+More information is available in the README in easy-enroll.
