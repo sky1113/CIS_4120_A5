@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import Toast from "./components/Toast";
 import "@fontsource/inter";
+import CourseDescription from "./components/CourseDescription";
 
 const theme = createTheme({
   typography: {
@@ -33,7 +33,7 @@ export default function App() {
       <div className="App">
         <Navbar />
         <div style={bodyStyle}>
-          <Toast />
+          <CourseDescription />
         </div>
       </div>
     </ThemeProvider>
