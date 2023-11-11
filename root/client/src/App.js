@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import CourseCard from "./components/CourseCard";
+import Toast from "./components/Toast";
 import "@fontsource/inter";
 
 const theme = createTheme({
@@ -33,7 +33,7 @@ export default function App() {
       <div className="App">
         <Navbar />
         <div style={bodyStyle}>
-          <CourseCard />
+          <Toast />
         </div>
       </div>
     </ThemeProvider>
