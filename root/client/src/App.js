@@ -3,6 +3,7 @@ import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
 import CourseCard from "./components/CourseCard";
+import "@fontsource/inter";
 
 const theme = createTheme({
   typography: {
