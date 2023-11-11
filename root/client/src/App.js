@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import SearchBar from "./components/SearchBar";
+import Landing from "./pages/Landing";
 import "@fontsource/inter";
 
 const theme = createTheme({
@@ -32,8 +32,8 @@ export default function App() {
       <CssBaseline />
       <div className="App">
         <Navbar />
-        <div style={bodyStyle}>
-          <SearchBar />
+        <div>
+          <Landing />
         </div>
       </div>
     </ThemeProvider>
