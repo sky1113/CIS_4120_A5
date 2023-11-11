@@ -1,35 +1,41 @@
-import React from 'react';
+import React from "react";
 import { Search } from "react-feather";
 
 const SearchBar = () => {
   const searchBarStyle = {
-    position: 'relative',
-    display: 'inline-block',
+    position: "relative",
+    display: "inline-block",
+    width: "80%", // Adjust width to 100% of the parent element
+    maxWidth: "1100px", // Set a maximum width if necessary
   };
 
   const searchInputStyle = {
-    display: 'flex',
-    width: '1152px',
-    padding: '12px 20px',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: '10px',
-    borderRadius: '16px',
-    border: '1px solid #1E2EDE',
-    background: '#FFF',
+    width: "100%", // Adjust width to 100% of the parent element
+    padding: "12px 20px 12px 40px", // Adjust padding to make room for the icon
+    borderRadius: "16px",
+    border: "2px solid #1E2EDE",
+    background: "#FFF",
+    outline: "none", // Removes the default focus outline
+    fontSize: "16px", // Adjust font size as needed
   };
 
   const searchIconStyle = {
-    position: 'absolute',
-    left: '10px',
-    top: '50%',
-    transform: 'translateY(-50%)',
+    color: "#1E2EDE",
+    position: "absolute",
+    left: "10px",
+    top: "50%",
+    transform: "translateY(-50%)",
+    pointerEvents: "none", // Makes the icon non-interactive
   };
 
   return (
     <div style={searchBarStyle}>
       <Search style={searchIconStyle} />
-      <input type="text" style={searchInputStyle} placeholder="Search..." />
+      <input
+        type="text"
+        style={searchInputStyle}
+        placeholder="search for a class..."
+      />
     </div>
   );
 };
