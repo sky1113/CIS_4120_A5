@@ -19,6 +19,7 @@ const Arrow = ({ direction, onClick }) => {
           cursor: 'pointer',
           padding: '10px',
           [direction === 'prev' ? 'left' : 'right']: 0,
+          zIndex: 1,
         }}
         onClick={onClick}
       >

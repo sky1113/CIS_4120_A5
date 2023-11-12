@@ -14,6 +14,7 @@ const Navbar = () => {
     left: "0",
     right: "0",
     backgroundColor: "#FFF",
+    zIndex: '1000',
   };
 
   const logoStyle = {
