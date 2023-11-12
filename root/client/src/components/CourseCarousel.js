@@ -17,7 +17,7 @@ const Arrow = ({ direction, onClick }) => {
           top: '50%',
           transform: 'translateY(-50%)',
           cursor: 'pointer',
-          padding: '10px',
+          padding: '16px',
           [direction === 'prev' ? 'left' : 'right']: 0,
           zIndex: 1,
         }}
@@ -71,7 +71,7 @@ const Arrow = ({ direction, onClick }) => {
   };
 
   return (
-    <div style={{ paddingLeft: '80px', paddingRight: '80px',paddingTop: '20px' }}>
+    <div style={{ paddingLeft: '144px', paddingRight: '144px',paddingTop: '20px' }}>
     <div style={{ position: 'relative' }}>
       <h2 style={{ textAlign: 'left' }}>Recommended for You</h2>
       <Slider {...settings}>
