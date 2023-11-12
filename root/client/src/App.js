@@ -5,6 +5,7 @@ import Navbar from "./components/NavBar";
 import Landing from "./pages/Landing";
 import "@fontsource/inter";
 
+
 const theme = createTheme({
   typography: {
     fontFamily: "Inter",

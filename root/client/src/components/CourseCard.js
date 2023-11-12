@@ -27,7 +27,7 @@ export default function MediaControlCard() {
   };
 
   return (
-    <Card style={cardStyle}>
+    <Card sx={{ ...cardStyle, border: "2px solid #1E2EDE", borderRadius: "12px" }}>
       <CardContent style={cardContentStyle}>
         <Typography component="div" variant="h5">
           Course Code
