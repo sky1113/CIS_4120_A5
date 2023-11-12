@@ -96,7 +96,7 @@ const CourseDescription = () => {
             Course Name
           </Typography>
         </div>
-        <div class="course-stats">course stats here</div>
+        <div>course stats here</div>
         <div style={courseInformationStyle}>
           <div style={columnStyle}>
             <div style={rowStyle}>
@@ -155,8 +155,8 @@ const CourseDescription = () => {
             culpa qui officia deserunt mollit anim id est laborum."
           </Typography>
         </div>
-        <LecRecTable class="lecTable" />
-        <LecRecTable class="recTable" />
+        <LecRecTable />
+        <LecRecTable />
       </div>
     </div>
   );

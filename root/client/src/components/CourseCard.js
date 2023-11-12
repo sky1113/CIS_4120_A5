@@ -27,7 +27,9 @@ export default function MediaControlCard() {
   };
 
   return (
-    <Card sx={{ ...cardStyle, border: "2px solid #1E2EDE", borderRadius: "12px" }}>
+    <Card
+      sx={{ ...cardStyle, border: "2px solid #1E2EDE", borderRadius: "12px" }}
+    >
       <CardContent style={cardContentStyle}>
         <Typography component="div" variant="h5">
           Course Code
@@ -35,7 +37,7 @@ export default function MediaControlCard() {
         <Typography component="div" variant="subtitle1">
           Course Name
         </Typography>
-        <div class="course-stats" style={courseStatStyle}>
+        <div style={courseStatStyle}>
           <Typography component="div" variant="subtitle2">
             Prof. Name
           </Typography>

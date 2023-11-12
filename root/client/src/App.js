@@ -4,7 +4,9 @@ import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
 import Landing from "./pages/Landing";
 import "@fontsource/inter";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Search from "./pages/Search";
+import CourseCarousel from "./components/CourseCarousel";
 
 const theme = createTheme({
   typography: {
@@ -37,12 +39,18 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App" style={appStyle}>
-        <Navbar />
-        <div style={bodyStyle}>
-          <Landing />
+      <Router>
+        <div className="App" style={appStyle}>
+          <Navbar />
+          <div style={bodyStyle}>
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/landing" element={<Landing />} />
+              <Route path="/search" element={<Search />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      </Router>
     </ThemeProvider>
   );
 }
