@@ -1,36 +1,36 @@
 import React from "react";
-import CourseDescription from '../components/CourseDescription';
-import CourseSideBar from '../components/CourseSideBar';
+import CourseDescription from "../components/CourseDescription";
+import CourseSideBar from "../components/CourseSideBar";
 
 const CoursePage = () => {
-    const pageStyle = {
-        display: 'flex',
-        justifyContent: 'space-between',
-        padding: '00px', // Add overall padding
-        height: '100vh', // Ensure the container takes the full height of the viewport
-    };
+  const pageStyle = {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "00px", // Add overall padding
+    height: "100%", // Ensure the container takes the full height of the viewport
+  };
 
-    const sideBarStyle = {
-        overflowY: 'auto', // Enable vertical scrolling for CourseSideBar
-        maxHeight: '100%', // Ensure CourseSideBar takes the full height of the container
-        padding: '0 54px', // Add some padding on the right to separate from CourseDescription
-    };
+  const sideBarStyle = {
+    overflowY: "auto", // Enable vertical scrolling for CourseSideBar
+    maxHeight: "100%", // Ensure CourseSideBar takes the full height of the container
+    padding: "0 54px", // Add some padding on the right to separate from CourseDescription
+  };
 
-    const descriptionStyle = {
-        overflowY: 'auto', // Enable vertical scrolling for CourseDescription
-        flex: 1, // Allow CourseDescription to take remaining space
-    };
+  const descriptionStyle = {
+    overflowY: "auto", // Enable vertical scrolling for CourseDescription
+    flex: 1, // Allow CourseDescription to take remaining space
+  };
 
-    return (
-        <div style={pageStyle}>
-            <div style={sideBarStyle}>
-                <CourseSideBar />
-            </div>
-            <div style={descriptionStyle}>
-                <CourseDescription />
-            </div>
-        </div>
-    );
+  return (
+    <div style={pageStyle}>
+      <div style={sideBarStyle}>
+        <CourseSideBar />
+      </div>
+      <div style={descriptionStyle}>
+        <CourseDescription />
+      </div>
+    </div>
+  );
 };
 
 export default CoursePage;

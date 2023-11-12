@@ -6,7 +6,7 @@ import CourseDetails from "./pages/CourseDetails";
 import "@fontsource/inter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
-import CourseCarousel from "./components/CourseCarousel";
+import Landing from "./pages/Landing";
 
 const theme = createTheme({
   typography: {
@@ -47,6 +47,7 @@ export default function App() {
               <Route path="/" element={<Landing />} />
               <Route path="/landing" element={<Landing />} />
               <Route path="/search" element={<Search />} />
+              <Route path="/course-details" element={<CourseDetails />} />
             </Routes>
           </div>
         </div>
