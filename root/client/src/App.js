@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import Search from "./pages/Search";
+import CourseDetails from "./pages/CourseDetails";
 import "@fontsource/inter";
 
 
@@ -34,7 +34,7 @@ export default function App() {
       <div className="App">
         <Navbar />
         <div style={bodyStyle}>
-          <Search />
+          <CourseDetails />
         </div>
       </div>
     </ThemeProvider>
