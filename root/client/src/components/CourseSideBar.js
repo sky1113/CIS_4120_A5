@@ -8,9 +8,10 @@ const CourseSideBar = () => {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'flex-start', // Align items to the left
-        maxWidth: '460px',
+        maxWidth: '450px',
         margin: 'auto',
         gap: '24px',
+        marginBottom: "50px",
     };
 
     const typographyStyle = {
@@ -24,6 +25,8 @@ const CourseSideBar = () => {
             <Typography variant="body" style={typographyStyle}>
                 800 Results
             </Typography>
+            <CourseCard />
+            <CourseCard />
             <CourseCard />
             <CourseCard />
             <CourseCard />

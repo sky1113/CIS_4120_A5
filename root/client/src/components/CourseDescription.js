@@ -19,7 +19,7 @@ const CourseDescription = () => {
     width: "90%",
     height: "90%",
     justifyContent: "center",
-    margin: "30px 0",
+    margin: "48px 0",
   };
 
   const courseDescriptionTitleStyle = {
