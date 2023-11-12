@@ -33,7 +33,7 @@ export default function App() {
       <CssBaseline />
       <div className="App">
         <Navbar />
-          <div style={bodyStyle}>
+        <div style={bodyStyle}>
           <Search />
         </div>
       </div>
