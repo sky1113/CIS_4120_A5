@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import Search from "./pages/Search";
+import Landing from "./pages/Landing";
 import "@fontsource/inter";
 
 
@@ -23,6 +23,12 @@ const theme = createTheme({
   },
 });
 
+const appStyle = {
+  height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+};
+
 const bodyStyle = {
   marginTop: "105px",
 };
@@ -31,10 +37,10 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+      <div className="App" style={appStyle}>
         <Navbar />
         <div style={bodyStyle}>
-          <Search />
+          <Landing />
         </div>
       </div>
     </ThemeProvider>
