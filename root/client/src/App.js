@@ -22,6 +22,12 @@ const theme = createTheme({
   },
 });
 
+const appStyle = {
+  height: "100vh",
+  display: "flex",
+  justifyContent: "center",
+};
+
 const bodyStyle = {
   marginTop: "105px",
 };
@@ -30,9 +36,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+      <div className="App" style={appStyle}>
         <Navbar />
-        <div>
+        <div style={bodyStyle}>
           <Landing />
         </div>
       </div>
