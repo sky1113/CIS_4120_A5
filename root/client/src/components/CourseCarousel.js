@@ -10,23 +10,28 @@ import 'slick-carousel/slick/slick-theme.css';
 const Arrow = ({ direction, onClick }) => {
     const IconComponent = direction === 'prev' ? ChevronLeft : ChevronRight;
   
+    const arrowStyle = {
+      position: 'absolute',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      cursor: 'pointer',
+      padding: '0px',
+      zIndex: 1,
+    };
+  
+    if (direction === 'prev') {
+      arrowStyle.left = '-48px'; // Adjust as needed
+    } else {
+      arrowStyle.right = '-48px'; // Adjust as needed
+    }
+  
     return (
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          cursor: 'pointer',
-          padding: '16px',
-          [direction === 'prev' ? 'left' : 'right']: 0,
-          zIndex: 1,
-        }}
-        onClick={onClick}
-      >
+      <div style={arrowStyle} onClick={onClick}>
         <IconComponent size={24} />
       </div>
     );
   };
+  
   
   const carousel = () => {
   const cardData = [

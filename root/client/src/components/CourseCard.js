@@ -8,6 +8,8 @@ export default function MediaControlCard() {
     display: "flex",
     width: "368px",
     height: "173px",
+    border: "1px solid ##1E2EDE", // Add this line for the outline
+    borderRadius: "8px", // Optional: Add border-radius for rounded corners
   };
 
   const cardContentStyle = {
