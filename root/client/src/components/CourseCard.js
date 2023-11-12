@@ -8,8 +8,6 @@ export default function MediaControlCard() {
     display: "flex",
     width: "368px",
     height: "173px",
-    border: "1px solid ##1E2EDE", // Add this line for the outline
-    borderRadius: "8px", // Optional: Add border-radius for rounded corners
   };
 
   const cardContentStyle = {
@@ -29,7 +27,7 @@ export default function MediaControlCard() {
   };
 
   return (
-    <Card style={cardStyle}>
+    <Card sx={{ ...cardStyle, border: "2px solid #1E2EDE", borderRadius: "12px" }}>
       <CardContent style={cardContentStyle}>
         <Typography component="div" variant="h5">
           Course Code
