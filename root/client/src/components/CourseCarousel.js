@@ -11,7 +11,17 @@ const Arrow = ({ direction, onClick }) => {
     const IconComponent = direction === 'prev' ? ChevronLeft : ChevronRight;
   
     return (
-      <div className={`arrow ${direction}`} onClick={onClick}>
+      <div
+        style={{
+          position: 'absolute',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          cursor: 'pointer',
+          padding: '10px',
+          [direction === 'prev' ? 'left' : 'right']: 0,
+        }}
+        onClick={onClick}
+      >
         <IconComponent size={24} />
       </div>
     );
@@ -60,8 +70,9 @@ const Arrow = ({ direction, onClick }) => {
   };
 
   return (
-    <div>
-      <h2>Recommended for You</h2>
+    <div style={{ paddingLeft: '80px', paddingRight: '80px',paddingTop: '20px' }}>
+    <div style={{ position: 'relative' }}>
+      <h2 style={{ textAlign: 'left' }}>Recommended for You</h2>
       <Slider {...settings}>
         {cardData.map((data, index) => (
           <div key={index}>
@@ -69,6 +80,7 @@ const Arrow = ({ direction, onClick }) => {
           </div>
         ))}
       </Slider>
+    </div>
     </div>
   );
 };
