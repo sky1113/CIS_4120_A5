@@ -1,15 +1,17 @@
 import { Typography } from "@mui/material";
 import React from "react";
+import LecRecTable from "./LecRecTable";
 
 const CourseDescription = () => {
   const courseDescriptionStyle = {
-    height: "900px",
-    width: "964px",
+    display: "flex",
+    flexDirection: "column",
     backgroundColor: "#FFF",
+    alignItems: "center",
   };
 
   const courseDescriptionContentStyle = {
-    display: "inline-flex",
+    display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
     gap: "33px",
@@ -17,6 +19,7 @@ const CourseDescription = () => {
     width: "90%",
     height: "90%",
     justifyContent: "center",
+    margin: "30px 0",
   };
 
   const courseDescriptionTitleStyle = {
@@ -51,13 +54,13 @@ const CourseDescription = () => {
 
   const labelStyle = {
     color: "#1F1F1F",
-    fontSize: "20",
+    fontSize: "20px",
     fontWeight: "bold",
   };
 
   const valueStyle = {
     color: "#1F1F1F",
-    fontSize: "20",
+    fontSize: "20px",
   };
 
   const titleStyle = {
@@ -152,6 +155,8 @@ const CourseDescription = () => {
             culpa qui officia deserunt mollit anim id est laborum."
           </Typography>
         </div>
+        <LecRecTable class="lecTable" />
+        <LecRecTable class="recTable" />
       </div>
     </div>
   );
