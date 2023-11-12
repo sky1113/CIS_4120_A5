@@ -4,8 +4,8 @@ import { Search } from "react-feather";
 const SearchBar = () => {
   const searchBarStyle = {
     position: "relative",
-    //display: "inline-block",
-    width: "80%", // Adjust width to 100% of the parent element
+    display: "inline-block",
+    width: "100%", // Adjust width to 100% of the parent element
     maxWidth: "1152px", // Set a maximum width if necessary
     marginTop: "48px",
   };

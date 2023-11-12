@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import Landing from "./pages/Landing";
+import CourseDetails from "./pages/CourseDetails";
 import "@fontsource/inter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
