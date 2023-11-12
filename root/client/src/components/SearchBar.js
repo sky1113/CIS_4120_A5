@@ -6,8 +6,8 @@ const SearchBar = () => {
     position: "relative",
     //display: "inline-block",
     width: "80%", // Adjust width to 100% of the parent element
-    maxWidth: "1100px", // Set a maximum width if necessary
-    marginTop: '47px',
+    maxWidth: "1152px", // Set a maximum width if necessary
+    marginTop: "48px",
   };
 
   const searchInputStyle = {

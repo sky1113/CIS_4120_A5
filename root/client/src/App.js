@@ -2,8 +2,9 @@ import React from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
-import CourseSideBar from "./components/CourseSideBar";
+import Search from "./pages/Search";
 import "@fontsource/inter";
+
 
 const theme = createTheme({
   typography: {
@@ -33,7 +34,7 @@ export default function App() {
       <div className="App">
         <Navbar />
         <div style={bodyStyle}>
-          <CourseSideBar />
+          <Search />
         </div>
       </div>
     </ThemeProvider>
