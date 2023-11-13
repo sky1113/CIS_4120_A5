@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 import { Search, ShoppingCart, User } from "react-feather";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -31,9 +32,13 @@ const Navbar = () => {
 
   return (
     <nav style={navStyle}>
-      <Logo style={logoStyle} />
+      <Link to="/"> {/* Use Link to wrap the logo and navigate to the home page */}
+        <Logo style={logoStyle} />
+      </Link>
       <div style={{ display: "flex" }}>
-        <Search style={iconStyle} />
+        <Link to="/search"> {/* Link the search icon to the /search page */}
+          <Search style={iconStyle} />
+        </Link>
         <ShoppingCart style={iconStyle} />
         <User style={iconStyle} />
       </div>

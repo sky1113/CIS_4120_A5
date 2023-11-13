@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { ReactComponent as Logo } from "../assets/logo.svg";
@@ -16,15 +17,16 @@ const Landing = () => {
   };
 
   const welcomeStyle = {
-    display: "flex", // Use flexbox for alignment
-    alignItems: "center", // Align items vertically
-    gap: "10px", // Gap between logo and text
+    display: "flex",
+    alignItems: "center",
+    gap: "10px",
     fontWeight: "bold",
   };
+
   const buttonsContainerStyle = {
     display: "flex",
-    gap: "20px", // Adjust the gap between buttons
-    alignItems: "center", // Align buttons in the center
+    gap: "20px",
+    alignItems: "center",
     justifyContent: "center",
     marginTop: "50px",
   };
@@ -54,22 +56,21 @@ const Landing = () => {
           </Typography>
         </div>
         <div style={buttonsContainerStyle}>
-          <Button
-            variant="contained"
-            disableElevation
-            color="primary"
-            size="large"
-          >
-            Sign up
-          </Button>
-          <Button
-            variant="outlined"
-            color="primary"
-            size="large"
-            style={outlinedButtonStyle}
-          >
-            Log in
-          </Button>
+          <Link to="/search">
+            <Button variant="contained" disableElevation color="primary" size="large">
+              Sign up
+            </Button>
+          </Link>
+          <Link to="/search">
+            <Button
+              variant="outlined"
+              color="primary"
+              size="large"
+              style={outlinedButtonStyle}
+            >
+              Log in
+            </Button>
+          </Link>
         </div>
       </div>
     </div>
