@@ -8,18 +8,16 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <div>
-        <SearchBar />
-        <div style={carouselContainerStyle}>
-          <CourseCarousel />
-        </div>
-        <div style={carouselContainerStyle}>
-          <CourseCarousel />
-        </div>
-        <div style={carouselContainerStyle}>
-          <CourseCarousel />
-        </div>
+    <div style={{ maxWidth: "100vw" }}>
+      <SearchBar />
+      <div style={carouselContainerStyle}>
+        <CourseCarousel />
+      </div>
+      <div style={carouselContainerStyle}>
+        <CourseCarousel />
+      </div>
+      <div style={carouselContainerStyle}>
+        <CourseCarousel />
       </div>
     </div>
   );
