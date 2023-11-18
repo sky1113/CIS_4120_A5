@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Arrow = ({ direction, onClick }) => {
-
   const IconComponent = direction === "prev" ? ChevronLeft : ChevronRight;
 
   const arrowStyle = {
@@ -33,43 +32,8 @@ const Arrow = ({ direction, onClick }) => {
   );
 };
 
-const CourseCarousel = () => {
-
-  const dummyData = {
-    title: "Recommended for Your Major",
-  } 
-
-  const {title} = dummyData; 
-  const cardData = [
-    {
-      courseCode: "CIS101",
-      courseName: "Introduction to Computer Science",
-      professorName: "Dr. Smith",
-      enrollment: 120,
-      avgGrade: "A-",
-    },
-    {
-      courseCode: "MATH202",
-      courseName: "Linear Algebra",
-      professorName: "Prof. Johnson",
-      enrollment: 90,
-      avgGrade: "B+",
-    },
-    {
-      courseCode: "CIS105",
-      courseName: "Data Exploration",
-      professorName: "Arvind",
-      enrollment: 120,
-      avgGrade: "A",
-    },
-    {
-      courseCode: "PHYS350",
-      courseName: "Quantum Mechanics",
-      professorName: "Prof. J",
-      enrollment: 90,
-      avgGrade: "B",
-    },
-  ];
+const CourseCarousel = (props) => {
+  const { title, cardData } = props;
 
   const settings = {
     dots: false, // Disable dots

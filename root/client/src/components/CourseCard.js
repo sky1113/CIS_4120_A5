@@ -5,11 +5,8 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
-
-export default function MediaControlCard(props) {
-
+export default function CourseCard(props) {
   const { courseCode, courseName, professorName, enrollment, avgGrade } = props;
-
 
   const cardStyle = {
     display: "flex",
