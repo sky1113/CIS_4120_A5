@@ -5,7 +5,20 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
+
 export default function MediaControlCard() {
+
+  const dummyData = {
+    courseCode: "CIS 1100",
+    courseName: "Intro to Programming",
+    professorName: "Harry Smith",
+    enrollment: "50",
+    averageGrade: "A-",
+  }
+
+  const { courseCode, courseName, professorName, enrollment, averageGrade } = dummyData;
+
+
   const cardStyle = {
     display: "flex",
     width: "368px",
@@ -35,20 +48,20 @@ export default function MediaControlCard() {
       <CardActionArea component={Link} to={"/course-details"}>
         <CardContent style={cardContentStyle}>
           <Typography component="div" variant="h5">
-            Course Code
+            {courseCode}
           </Typography>
           <Typography component="div" variant="subtitle1">
-            Course Name
+            {courseName}
           </Typography>
           <div style={courseStatStyle}>
             <Typography component="div" variant="subtitle2">
-              Prof. Name
+              {professorName}
             </Typography>
             <Typography component="div" variant="subtitle2">
-              Curr. Enrollment
+              {enrollment}
             </Typography>
             <Typography component="div" variant="subtitle2">
-              Avg. Grade
+              {averageGrade}
             </Typography>
           </div>
         </CardContent>
