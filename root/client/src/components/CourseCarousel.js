@@ -32,37 +32,8 @@ const Arrow = ({ direction, onClick }) => {
   );
 };
 
-const CourseCarousel = () => {
-  const cardData = [
-    {
-      courseCode: "CIS101",
-      courseName: "Introduction to Computer Science",
-      professorName: "Dr. Smith",
-      enrollment: 120,
-      avgGrade: "A-",
-    },
-    {
-      courseCode: "MAT202",
-      courseName: "Linear Algebra",
-      professorName: "Prof. Johnson",
-      enrollment: 90,
-      avgGrade: "B+",
-    },
-    {
-      courseCode: "CIS101",
-      courseName: "Introduction to Computer Science",
-      professorName: "Dr. Smith",
-      enrollment: 120,
-      avgGrade: "A-",
-    },
-    {
-      courseCode: "MAT202",
-      courseName: "Linear Algebra",
-      professorName: "Prof. Johnson",
-      enrollment: 90,
-      avgGrade: "B+",
-    },
-  ];
+const CourseCarousel = (props) => {
+  const { title, cardData } = props;
 
   const settings = {
     dots: false, // Disable dots
@@ -83,7 +54,7 @@ const CourseCarousel = () => {
       }}
     >
       <div style={{ position: "relative" }}>
-        <h2 style={{ textAlign: "left" }}>Recommended for You</h2>
+        <h2 style={{ textAlign: "left" }}>{title}</h2>
         <Slider {...settings}>
           {cardData.map((data, index) => (
             <div key={index}>

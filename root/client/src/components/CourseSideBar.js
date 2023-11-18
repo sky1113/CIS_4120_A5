@@ -19,18 +19,48 @@ const CourseSideBar = () => {
         fontWeight: 'bold', // Added bold style for emphasis
     };    
 
+    const cardData = [
+        {
+          courseCode: "CIS101",
+          courseName: "Introduction to Computer Science",
+          professorName: "Dr. Smith",
+          enrollment: 120,
+          avgGrade: "A-",
+        },
+        {
+          courseCode: "MAT202",
+          courseName: "Linear Algebra",
+          professorName: "Prof. Johnson",
+          enrollment: 90,
+          avgGrade: "B+",
+        },
+        {
+          courseCode: "CIS105",
+          courseName: "Data Exploration",
+          professorName: "Arvind",
+          enrollment: 120,
+          avgGrade: "A",
+        },
+        {
+          courseCode: "PHYS350",
+          courseName: "Quantum Mechanics",
+          professorName: "Prof. J",
+          enrollment: 90,
+          avgGrade: "B",
+        },
+      ];
+
     return (
         <div style={searchResultsStyle}>
             <SearchBar />
             <Typography variant="body" style={typographyStyle}>
-                800 Results
+                {cardData.length} Results
             </Typography>
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
-            <CourseCard />
+            {cardData.map((data, index) => (
+            <div key={index}>
+              <CourseCard {...data} />
+            </div>
+          ))}
         </div>
     );
 };
