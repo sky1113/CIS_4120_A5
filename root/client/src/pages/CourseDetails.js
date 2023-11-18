@@ -2,7 +2,9 @@ import React from "react";
 import CourseDescription from "../components/CourseDescription";
 import CourseSideBar from "../components/CourseSideBar";
 
+
 const CoursePage = () => {
+
   const pageStyle = {
     display: "flex",
     justifyContent: "space-between",
