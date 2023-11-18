@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Arrow = ({ direction, onClick }) => {
+
   const IconComponent = direction === "prev" ? ChevronLeft : ChevronRight;
 
   const arrowStyle = {
@@ -33,6 +34,12 @@ const Arrow = ({ direction, onClick }) => {
 };
 
 const CourseCarousel = () => {
+
+  const dummyData = {
+    title: "Recommended for Your Major",
+  } 
+
+  const {title} = dummyData; 
   const cardData = [
     {
       courseCode: "CIS101",
@@ -83,7 +90,7 @@ const CourseCarousel = () => {
       }}
     >
       <div style={{ position: "relative" }}>
-        <h2 style={{ textAlign: "left" }}>Recommended for You</h2>
+        <h2 style={{ textAlign: "left" }}>{title}</h2>
         <Slider {...settings}>
           {cardData.map((data, index) => (
             <div key={index}>

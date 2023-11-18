@@ -6,17 +6,9 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
 
-export default function MediaControlCard() {
+export default function MediaControlCard(props) {
 
-  const dummyData = {
-    courseCode: "CIS 1100",
-    courseName: "Intro to Programming",
-    professorName: "Harry Smith",
-    enrollment: "50",
-    averageGrade: "A-",
-  }
-
-  const { courseCode, courseName, professorName, enrollment, averageGrade } = dummyData;
+  const { courseCode, courseName, professorName, enrollment, avgGrade } = props;
 
 
   const cardStyle = {
@@ -61,7 +53,7 @@ export default function MediaControlCard() {
               {enrollment}
             </Typography>
             <Typography component="div" variant="subtitle2">
-              {averageGrade}
+              {avgGrade}
             </Typography>
           </div>
         </CardContent>
