@@ -1,8 +1,7 @@
-// CourseCarousel.js
 import React from "react";
 import Slider from "react-slick";
 import { ChevronLeft, ChevronRight } from "react-feather";
-import CourseCard from "./CourseCard"; // Import your existing card component
+import CourseCard from "./CourseCard";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

@@ -82,7 +82,7 @@ const Search = (props) => {
       <SearchBar />
       <div style={carouselContainerStyle}>
         <CourseCarousel
-          cardData={personalizedMajorData}
+          cardData={personalizedMajorData.cardData}
           onCourseSelect={(selectedCourse) =>
             onCourseSelect(selectedCourse, personalizedMajorData.cardData)
           }
@@ -90,7 +90,7 @@ const Search = (props) => {
       </div>
       <div style={carouselContainerStyle}>
         <CourseCarousel
-          cardData={personalizedMinorData}
+          cardData={personalizedMinorData.cardData}
           onCourseSelect={(selectedCourse) =>
             onCourseSelect(selectedCourse, personalizedMajorData.cardData)
           }
