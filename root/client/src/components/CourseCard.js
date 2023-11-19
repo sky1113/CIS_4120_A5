@@ -34,7 +34,7 @@ export default function CourseCard(props) {
     <Card
       sx={{ ...cardStyle, border: "2px solid #1E2EDE", borderRadius: "12px" }}
     >
-      <CardActionArea component={Link} to={"/course-details"}>
+      <CardActionArea component={Link} to={`/course-details/${courseCode}`}>
         <CardContent style={cardContentStyle}>
           <Typography component="div" variant="h5">
             {courseCode}

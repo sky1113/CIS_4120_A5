@@ -33,11 +33,11 @@ const Arrow = ({ direction, onClick }) => {
 };
 
 const CourseCarousel = (props) => {
-  const { title, cardData } = props;
+  const { title, cardData, onCourseSelect } = props;
 
   const settings = {
-    dots: false, // Disable dots
-    infinite: true,
+    dots: false,
+    infinite: false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
@@ -57,7 +57,7 @@ const CourseCarousel = (props) => {
         <h2 style={{ textAlign: "left" }}>{title}</h2>
         <Slider {...settings}>
           {cardData.map((data, index) => (
-            <div key={index}>
+            <div key={index} onClick={() => onCourseSelect(data)}>
               <CourseCard {...data} />
             </div>
           ))}

@@ -1,8 +1,10 @@
 import React from "react";
-import CourseCarousel from "../components/CourseCarousel"; // Assuming you have a CourseCarousel component
-import SearchBar from "../components/SearchBar"; // Import the SearchBar component
+import CourseCarousel from "../components/CourseCarousel";
+import SearchBar from "../components/SearchBar";
 
-const Search = () => {
+const Search = (props) => {
+  const { onCourseSelect } = props;
+
   const personalizedMajorData = {
     title: "Recommended for Your Major (CIS)",
     cardData: [
@@ -79,10 +81,20 @@ const Search = () => {
     <div style={{ maxWidth: "100vw" }}>
       <SearchBar />
       <div style={carouselContainerStyle}>
-        <CourseCarousel {...personalizedMajorData} />
+        <CourseCarousel
+          cardData={personalizedMajorData}
+          onCourseSelect={(selectedCourse) =>
+            onCourseSelect(selectedCourse, personalizedMajorData.cardData)
+          }
+        />
       </div>
       <div style={carouselContainerStyle}>
-        <CourseCarousel {...personalizedMinorData} />
+        <CourseCarousel
+          cardData={personalizedMinorData}
+          onCourseSelect={(selectedCourse) =>
+            onCourseSelect(selectedCourse, personalizedMajorData.cardData)
+          }
+        />
       </div>
     </div>
   );

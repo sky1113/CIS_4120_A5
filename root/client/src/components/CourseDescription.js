@@ -2,22 +2,18 @@ import { Typography } from "@mui/material";
 import React from "react";
 import LecRecTable from "./LecRecTable";
 
-const CourseDescription = () => {
+const CourseDescription = (props) => {
+  const { selectedCourse } = props;
+
   const dummyData = {
-    courseCode: "CIS 1100",
-    courseName: "Introduction to Computer Science",
-    professorName: "Harry Smith",
     difficulty: "3.0",
     workload: "3.0",
-    averageGrade: "A-",
     profRating: "3.0",
-    enrolled: "50%",
     offeredIn: "Spring",
     credits: "3",
     syllabus: "doc",
     website: "www.cis.com",
-    description:
-      "Introduction to Computer Programming is the first course i",
+    description: "Introduction to Computer Programming is the first course i",
     prerequisites:
       "Introduction to Computer Programming is the first course in our series introducing students to computer science. In this class you will learn.",
     lectureTime: "MWF 12:00-12:59 PM",
@@ -26,14 +22,9 @@ const CourseDescription = () => {
   };
 
   const {
-    courseCode,
-    courseName,
-    professorName,
     difficulty,
     workload,
-    averageGrade,
     profRating,
-    enrolled,
     offeredIn,
     credits,
     syllabus,
@@ -132,10 +123,10 @@ const CourseDescription = () => {
       <div style={courseDescriptionContentStyle}>
         <div style={courseDescriptionTitleStyle}>
           <Typography variant="h4" style={titleStyle}>
-            {courseCode}
+            {selectedCourse.courseCode}
           </Typography>
           <Typography variant="h5" style={subtitleStyle}>
-            {courseName}
+            {selectedCourse.courseName}
           </Typography>
         </div>
         <div>course stats here</div>
@@ -143,7 +134,9 @@ const CourseDescription = () => {
           <div style={columnStyle}>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>{enrolled}</Typography>
+              <Typography style={valueStyle}>
+                {selectedCourse.enrollment}
+              </Typography>
             </div>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Credits</Typography>
@@ -161,7 +154,9 @@ const CourseDescription = () => {
             </div>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Professor</Typography>
-              <Typography style={valueStyle}>{professorName}</Typography>
+              <Typography style={valueStyle}>
+                {selectedCourse.professorName}
+              </Typography>
             </div>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Syllabus</Typography>
