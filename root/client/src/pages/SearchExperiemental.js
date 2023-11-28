@@ -6,7 +6,7 @@ const SearchExperimental = (props) => {
   const { onCourseSelect } = props;
 
   const personalizedMajorData = {
-    title: "Recommended for CIS Major",
+    title: "CIS Courses",
     cardData: [
       {
         courseCode: "CIS 3200",
@@ -40,7 +40,7 @@ const SearchExperimental = (props) => {
   };
 
   const personalizedMinorData = {
-    title: "Recommended MATH Minor",
+    title: "MATH Courses",
     cardData: [
       {
         courseCode: "MATH 3140",
@@ -82,6 +82,7 @@ const SearchExperimental = (props) => {
       <SearchBar />
       <div style={carouselContainerStyle}>
         <CourseCarousel
+          title={personalizedMajorData.title}
           cardData={personalizedMajorData.cardData}
           onCourseSelect={(selectedCourse) =>
             onCourseSelect(selectedCourse, personalizedMajorData.cardData)
@@ -90,9 +91,10 @@ const SearchExperimental = (props) => {
       </div>
       <div style={carouselContainerStyle}>
         <CourseCarousel
+          title={personalizedMinorData.title}
           cardData={personalizedMinorData.cardData}
           onCourseSelect={(selectedCourse) =>
-            onCourseSelect(selectedCourse, personalizedMajorData.cardData)
+            onCourseSelect(selectedCourse, personalizedMinorData.cardData)
           }
         />
       </div>
