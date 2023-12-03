@@ -12,6 +12,7 @@ export default function CourseCard(props) {
     display: "flex",
     width: "368px",
     height: "173px",
+    margin: "auto",
   };
 
   const cardContentStyle = {
