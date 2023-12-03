@@ -7,7 +7,6 @@ import "@fontsource/inter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
 import Landing from "./pages/Landing";
-import SearchExperimental from "./pages/SearchExperiemental";
 
 const theme = createTheme({
   typography: {
@@ -58,12 +57,6 @@ export default function App() {
               <Route
                 path="/search"
                 element={<Search onCourseSelect={handleCourseSelection} />}
-              />
-              <Route
-                path="/search-experimental"
-                element={
-                  <SearchExperimental onCourseSelect={handleCourseSelection} />
-                }
               />
               <Route
                 path="/course-details/:courseCode"
