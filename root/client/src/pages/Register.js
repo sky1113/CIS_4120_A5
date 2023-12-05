@@ -1,23 +1,37 @@
 import React from "react";
 import { TextField, Button, Container, Typography } from "@mui/material";
+import axios from "axios";
 
 const containerStyle = {
   margin: "auto",
 };
 
 const Register = () => {
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    const formData = new FormData(event.currentTarget);
+
+    const userData = {
+      email: formData.get("email"),
+      password: formData.get("password"),
+    };
+
+    try {
+      const response = await axios.post(
+        "localhost:8000/api/register/",
+        userData
+      );
+      console.log(response.data);
+      // Handle successful registration (e.g., redirect to login or dashboard)
+    } catch (error) {
+      console.error("Registration error:", error.response);
+      // Handle errors (e.g., show error message to user)
+    }
   };
 
   return (
     <Container maxWidth="xs" style={containerStyle}>
-      <Typography component="h1" variant="h5">
+      <Typography variant="h4" sx={{ fontStyle: "bold" }}>
         Sign up
       </Typography>
       <form onSubmit={handleSubmit}>

@@ -56,8 +56,13 @@ const Landing = () => {
           </Typography>
         </div>
         <div style={buttonsContainerStyle}>
-          <Link to="/search">
-            <Button variant="contained" disableElevation color="primary" size="large">
+          <Link to="/register">
+            <Button
+              variant="contained"
+              disableElevation
+              color="primary"
+              size="large"
+            >
               Sign up
             </Button>
           </Link>
