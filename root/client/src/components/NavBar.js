@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link, useLocation } from "react-router-dom";
 import { Search, ShoppingCart, User } from "react-feather";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 
@@ -15,7 +15,7 @@ const Navbar = () => {
     left: "0",
     right: "0",
     backgroundColor: "#FFF",
-    zIndex: '1000',
+    zIndex: "1000",
   };
 
   const logoStyle = {
@@ -30,19 +30,33 @@ const Navbar = () => {
     height: "36px",
   };
 
+  const location = useLocation();
+
   return (
-    <nav style={navStyle}>
-      <Link to="/"> {/* Use Link to wrap the logo and navigate to the home page */}
-        <Logo style={logoStyle} />
-      </Link>
-      <div style={{ display: "flex" }}>
-        <Link to="/search"> {/* Link the search icon to the /search page */}
-          <Search style={iconStyle} />
-        </Link>
-        <ShoppingCart style={iconStyle} />
-        <User style={iconStyle} />
-      </div>
-    </nav>
+    <>
+      {location.pathname.includes("/register") ||
+      location.pathname.includes("/login") ||
+      location.pathname.endsWith("/") ? (
+        <nav style={navStyle}>
+          <Link to="/">
+            <Logo style={logoStyle} />
+          </Link>
+        </nav>
+      ) : (
+        <nav style={navStyle}>
+          <Link to="/">
+            <Logo style={logoStyle} />
+          </Link>
+          <div style={{ display: "flex" }}>
+            <Link to="/search">
+              <Search style={iconStyle} />
+            </Link>
+            <ShoppingCart style={iconStyle} />
+            <User style={iconStyle} />
+          </div>
+        </nav>
+      )}
+    </>
   );
 };
 
