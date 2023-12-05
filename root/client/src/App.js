@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 import Navbar from "./components/NavBar";
@@ -38,6 +38,14 @@ const bodyStyle = {
 };
 
 export default function App() {
+  const [selectedCourse, setSelectedCourse] = useState(null);
+  const [relatedCourses, setRelatedCourses] = useState([]);
+
+  const handleCourseSelection = (course, relatedCoursesData) => {
+    setSelectedCourse(course);
+    setRelatedCourses(relatedCoursesData);
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -48,8 +56,20 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Landing />} />
               <Route path="/landing" element={<Landing />} />
-              <Route path="/search" element={<Search />} />
-              <Route path="/course-details" element={<CourseDetails />} />
+              <Route
+                path="/search"
+                element={<Search onCourseSelect={handleCourseSelection} />}
+              />
+              <Route
+                path="/course-details/:courseCode"
+                element={
+                  <CourseDetails
+                    selectedCourse={selectedCourse}
+                    relatedCourses={relatedCourses}
+                    onCourseSelect={handleCourseSelection}
+                  />
+                }
+              />
               <Route path="/register" element={<Register />} />
             </Routes>
           </div>

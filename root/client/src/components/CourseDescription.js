@@ -2,7 +2,40 @@ import { Typography } from "@mui/material";
 import React from "react";
 import LecRecTable from "./LecRecTable";
 
-const CourseDescription = () => {
+const CourseDescription = (props) => {
+  const { selectedCourse } = props;
+
+  const dummyData = {
+    difficulty: "3.0",
+    workload: "3.0",
+    profRating: "3.0",
+    offeredIn: "Spring",
+    credits: "3",
+    syllabus: "doc",
+    website: "www.cis.com",
+    description: "Introduction to Computer Programming is the first course i",
+    prerequisites:
+      "Introduction to Computer Programming is the first course in our series introducing students to computer science. In this class you will learn.",
+    lectureTime: "MWF 12:00-12:59 PM",
+    sectionNumber: "001",
+    location: "McNeil 102",
+  };
+
+  const {
+    difficulty,
+    workload,
+    profRating,
+    offeredIn,
+    credits,
+    syllabus,
+    website,
+    description,
+    prerequisites,
+    lectureTime,
+    sectionNumber,
+    location,
+  } = dummyData;
+
   const courseDescriptionStyle = {
     display: "flex",
     flexDirection: "column",
@@ -90,10 +123,10 @@ const CourseDescription = () => {
       <div style={courseDescriptionContentStyle}>
         <div style={courseDescriptionTitleStyle}>
           <Typography variant="h4" style={titleStyle}>
-            Course Code
+            {selectedCourse.courseCode}
           </Typography>
           <Typography variant="h5" style={subtitleStyle}>
-            Course Name
+            {selectedCourse.courseName}
           </Typography>
         </div>
         <div>course stats here</div>
@@ -101,29 +134,33 @@ const CourseDescription = () => {
           <div style={columnStyle}>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={valueStyle}>
+                {selectedCourse.enrollment}
+              </Typography>
             </div>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={labelStyle}>Credits</Typography>
+              <Typography style={valueStyle}>{credits}</Typography>
             </div>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={labelStyle}>Offered In</Typography>
+              <Typography style={valueStyle}>{offeredIn}</Typography>
             </div>
           </div>
           <div style={columnStyle}>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={labelStyle}>Credits</Typography>
+              <Typography style={valueStyle}>{credits}</Typography>
             </div>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={labelStyle}>Professor</Typography>
+              <Typography style={valueStyle}>
+                {selectedCourse.professorName}
+              </Typography>
             </div>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Enrolled</Typography>
-              <Typography style={valueStyle}>54/100</Typography>
+              <Typography style={labelStyle}>Syllabus</Typography>
+              <Typography style={valueStyle}>{syllabus}</Typography>
             </div>
           </div>
         </div>
@@ -132,13 +169,7 @@ const CourseDescription = () => {
             Description
           </Typography>
           <Typography variant="body1" style={textStyle}>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
+            {description}
           </Typography>
         </div>
         <div style={textSectionStyle}>
@@ -146,13 +177,7 @@ const CourseDescription = () => {
             Prerequisites
           </Typography>
           <Typography variant="body1" style={textStyle}>
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum."
+            {prerequisites}
           </Typography>
         </div>
         <LecRecTable />

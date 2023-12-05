@@ -2,7 +2,9 @@ import React from "react";
 import CourseDescription from "../components/CourseDescription";
 import CourseSideBar from "../components/CourseSideBar";
 
-const CoursePage = () => {
+const CoursePage = (props) => {
+  const { selectedCourse, relatedCourses, onCourseSelect } = props;
+
   const pageStyle = {
     display: "flex",
     justifyContent: "space-between",
@@ -24,10 +26,15 @@ const CoursePage = () => {
   return (
     <div style={pageStyle}>
       <div style={sideBarStyle}>
-        <CourseSideBar />
+        <CourseSideBar
+          relatedCourses={relatedCourses}
+          onCourseSelect={(selectedCourse) =>
+            onCourseSelect(selectedCourse, relatedCourses)
+          }
+        />
       </div>
       <div style={descriptionStyle}>
-        <CourseDescription />
+        <CourseDescription selectedCourse={selectedCourse} />
       </div>
     </div>
   );
