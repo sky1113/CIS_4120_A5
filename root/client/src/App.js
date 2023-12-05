@@ -7,6 +7,7 @@ import "@fontsource/inter";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
 import Landing from "./pages/Landing";
+import Register from "./pages/Register";
 
 const theme = createTheme({
   typography: {
@@ -33,6 +34,7 @@ const appStyle = {
 
 const bodyStyle = {
   marginTop: "105px",
+  display: "inherit",
 };
 
 export default function App() {
@@ -48,6 +50,7 @@ export default function App() {
               <Route path="/landing" element={<Landing />} />
               <Route path="/search" element={<Search />} />
               <Route path="/course-details" element={<CourseDetails />} />
+              <Route path="/register" element={<Register />} />
             </Routes>
           </div>
         </div>
