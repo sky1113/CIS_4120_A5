@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Search from "./pages/Search";
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 const theme = createTheme({
   typography: {
@@ -71,6 +72,7 @@ export default function App() {
                 }
               />
               <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
             </Routes>
           </div>
         </div>

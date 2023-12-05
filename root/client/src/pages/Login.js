@@ -7,60 +7,35 @@ const containerStyle = {
   margin: "auto",
 };
 
-const Register = () => {
+const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
 
-    const userData = {
+    const loginData = {
       email: formData.get("email"),
-      first_name: formData.get("firstName"),
-      last_name: formData.get("lastName"),
       password: formData.get("password"),
     };
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/register",
-        userData
+        "http://localhost:8000/api/login",
+        loginData
       );
       navigate("/search");
     } catch (error) {
-      console.error("Registration error:", error.response);
+      console.error("Login error:", error.response);
     }
   };
 
   return (
     <Container maxWidth="xs" style={containerStyle}>
       <Typography variant="h4" sx={{ fontWeight: "600", mb: 2 }}>
-        Sign up
+        Log in
       </Typography>
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              fullWidth
-              id="firstName"
-              label="First Name"
-              name="firstName"
-              autoComplete="fname"
-              autoFocus
-            />
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField
-              required
-              fullWidth
-              id="lastName"
-              label="Last Name"
-              name="lastName"
-              autoComplete="lname"
-            />
-          </Grid>
-        </Grid>
         <TextField
           margin="normal"
           required
@@ -89,11 +64,11 @@ const Register = () => {
           size="large"
           sx={{ mt: 2 }}
         >
-          Sign Up
+          Log In
         </Button>
       </form>
     </Container>
   );
 };
 
-export default Register;
+export default Login;

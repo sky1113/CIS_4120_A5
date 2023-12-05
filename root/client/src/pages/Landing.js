@@ -66,7 +66,7 @@ const Landing = () => {
               Sign up
             </Button>
           </Link>
-          <Link to="/search">
+          <Link to="/login">
             <Button
               variant="outlined"
               color="primary"

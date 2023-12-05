@@ -35,6 +35,7 @@ const Navbar = () => {
   return (
     <>
       {location.pathname.includes("/register") ||
+      location.pathname.includes("/login") ||
       location.pathname.endsWith("/") ? (
         <nav style={navStyle}>
           <Link to="/">
