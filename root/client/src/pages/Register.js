@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { TextField, Button, Container, Typography, Grid } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router";
@@ -26,7 +27,7 @@ const Register = () => {
         "http://localhost:8000/api/register",
         userData
       );
-      navigate("/search");
+      navigate("/questionnaire");
     } catch (error) {
       console.error("Registration error:", error.response);
     }
@@ -81,7 +82,8 @@ const Register = () => {
           id="password"
           autoComplete="current-password"
         />
-        <Button
+        <Link to="/questionnaire">
+          <Button
           type="submit"
           variant="contained"
           disableElevation
@@ -91,6 +93,7 @@ const Register = () => {
         >
           Sign Up
         </Button>
+        </Link>
       </form>
     </Container>
   );

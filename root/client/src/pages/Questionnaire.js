@@ -80,7 +80,7 @@ const Questionnaire = () => {
               Confirm
             </Button>
           </Link>
-          <Link to="/search">
+          <Link to="/register">
             <Button
               variant="outlined"
               color="primary"
