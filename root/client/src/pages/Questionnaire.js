@@ -30,10 +30,6 @@ const Questionnaire = () => {
     marginTop: "50px",
   };
 
-  const outlinedButtonStyle = {
-    border: "3px solid",
-  };
-
   const handleMajorChange = (event) => {
     setMajor(event.target.value);
   };
@@ -77,17 +73,7 @@ const Questionnaire = () => {
               color="primary"
               size="large"
             >
-              Confirm
-            </Button>
-          </Link>
-          <Link to="/register">
-            <Button
-              variant="outlined"
-              color="primary"
-              size="large"
-              style={outlinedButtonStyle}
-            >
-              Cancel
+              Continue
             </Button>
           </Link>
         </div>
