@@ -9,6 +9,7 @@ import Search from "./pages/Search";
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
+import Questionnaire from "./pages/Questionnaire"
 
 const theme = createTheme({
   typography: {
@@ -73,6 +74,7 @@ export default function App() {
               />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/questionnaire" element={<Questionnaire />} />
             </Routes>
           </div>
         </div>
