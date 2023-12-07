@@ -3,7 +3,8 @@ from myapp.views import (
     UserRegisterAPIView,
     UserLoginAPIView,
     UserViewAPI,
-    UserLogoutViewAPI
+    UserLogoutViewAPI,
+    ExternalDataView
 )
 
 urlpatterns = [
@@ -11,4 +12,5 @@ urlpatterns = [
     path('login', UserLoginAPIView.as_view(), name='login'),
     path('logout', UserLogoutViewAPI.as_view(), name='logout'),
     path('user', UserViewAPI.as_view(), name='user'),
+    path('external-data', ExternalDataView.as_view(), name='external-data'),
 ]

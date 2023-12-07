@@ -11,6 +11,7 @@ from django.conf import settings
 from django.contrib.auth import get_user_model
 from .utils import generate_access_token
 import jwt
+from .external_api import get_access_token, make_authenticated_request
 
 class UserRegisterAPIView(APIView):
     serializer_class = UserRegisterSerializer
@@ -101,4 +102,12 @@ class UserViewAPI(APIView):
         return Response(user_serializer.data)
     
 
-# Create your views here.
+class ExternalDataView(APIView):
+    permission_classes = [AllowAny]
+    def get(self, request, *args, **kwargs):
+        access_token = get_access_token()
+        if access_token:
+            external_api_response = make_authenticated_request(access_token)
+            return Response(external_api_response, status=status.HTTP_200_OK)
+        else:
+            return Response({"error": "Failed to obtain access token"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
