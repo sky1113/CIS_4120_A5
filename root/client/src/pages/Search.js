@@ -78,8 +78,8 @@ const Search = (props) => {
   };
 
   return (
-    <div style={{ maxWidth: "100vw" }}>
-      <SearchBar />
+    <div style={{ maxWidth: "100vw", margin: "auto" }}>
+      {/* <SearchBar /> */}
       <div style={carouselContainerStyle}>
         <CourseCarousel
           title={personalizedMajorData.title}

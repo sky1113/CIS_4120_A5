@@ -51,8 +51,8 @@ const Navbar = () => {
             <Link to="/search">
               <Search style={iconStyle} />
             </Link>
-            <ShoppingCart style={iconStyle} />
-            <User style={iconStyle} />
+            {/* <ShoppingCart style={iconStyle} />
+            <User style={iconStyle} /> */}
           </div>
         </nav>
       )}

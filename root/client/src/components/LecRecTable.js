@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Typography } from "@mui/material";
 
 function createData(time, section, location) {
   return { time, section, location };
@@ -19,7 +20,7 @@ const rows = [
 export default function LecRecTable() {
   const tableStyle = {
     height: "100%",
-    maxWidth: "70%",
+    fontSize: "40px",
   };
 
   const tableContainerStyle = {
@@ -31,9 +32,15 @@ export default function LecRecTable() {
       <Table style={tableStyle} size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Time</TableCell>
-            <TableCell align="left">Section</TableCell>
-            <TableCell align="left">Location</TableCell>
+            <TableCell>
+              <Typography variant="h6">Time</Typography>
+            </TableCell>
+            <TableCell align="left">
+              <Typography variant="h6">Section</Typography>
+            </TableCell>
+            <TableCell align="left">
+              <Typography variant="h6">Location</Typography>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

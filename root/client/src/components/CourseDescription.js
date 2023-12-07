@@ -64,9 +64,9 @@ const CourseDescription = (props) => {
   const courseInformationStyle = {
     display: "flex",
     flexDirection: "row",
-    justifyContent: "flex-start",
+    justifyContent: "space-between",
     alignItems: "flex-start",
-    gap: "56px",
+    width: "100%",
   };
 
   const columnStyle = {
@@ -75,6 +75,7 @@ const CourseDescription = (props) => {
     justifyContent: "flex-start",
     alignItems: "flex-start",
     gap: "8px",
+    flexBasis: "70%",
   };
 
   const rowStyle = {
@@ -129,7 +130,7 @@ const CourseDescription = (props) => {
             {selectedCourse.courseName}
           </Typography>
         </div>
-        <div>course stats here</div>
+        {/* <div>course stats here</div> */}
         <div style={courseInformationStyle}>
           <div style={columnStyle}>
             <div style={rowStyle}>
