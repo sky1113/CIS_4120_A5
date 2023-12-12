@@ -4,19 +4,16 @@ import SearchBar from "../components/SearchBar";
 import { CircularProgress } from "@mui/material";
 
 const Search = (props) => {
-  const { onCourseSelect } = props;
+  const { onCourseSelect, major, minor } = props;
 
-  const [majorName, setMajorName] = useState("CIS");
   const [majorCourseData, setMajorCourseData] = useState(null);
-
-  const [minorName, setMinorName] = useState("MATH");
   const [minorCourseData, setMinorCourseData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/external-data/${majorName}`,
+          `http://localhost:8000/api/external-data/${major}`,
           {
             headers: {
               Authorization: `Bearer YOUR_ACCESS_TOKEN`,
@@ -31,13 +28,13 @@ const Search = (props) => {
     };
 
     fetchData();
-  }, [majorName]); // Depend on majorName
+  }, [major]); // Depend on majorName
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:8000/api/external-data/${minorName}`,
+          `http://localhost:8000/api/external-data/${minor}`,
           {
             headers: {
               Authorization: `Bearer YOUR_ACCESS_TOKEN`,
@@ -52,7 +49,7 @@ const Search = (props) => {
     };
 
     fetchData();
-  }, [minorName]); // Depend on minorName
+  }, [minor]); // Depend on minorName
 
   const carouselContainerStyle = {
     marginBottom: "20px", // Adjust the margin as needed
@@ -69,7 +66,7 @@ const Search = (props) => {
       <div style={carouselContainerStyle}>
         {majorCourseData && (
           <CourseCarousel
-            title={"Recommended For Your Major (" + majorName + ")"}
+            title={"Recommended For Your Major (" + major + ")"}
             cardData={majorCourseData}
             onCourseSelect={(selectedCourse) =>
               onCourseSelect(selectedCourse, majorCourseData)
@@ -80,7 +77,7 @@ const Search = (props) => {
       <div style={carouselContainerStyle}>
         {minorCourseData && (
           <CourseCarousel
-            title={"Recommended For Your Minor (" + minorName + ")"}
+            title={"Recommended For Your Minor (" + minor + ")"}
             cardData={minorCourseData}
             onCourseSelect={(selectedCourse) =>
               onCourseSelect(selectedCourse, minorCourseData)
