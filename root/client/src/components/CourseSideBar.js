@@ -14,6 +14,7 @@ const CourseSideBar = (props) => {
     margin: "auto",
     gap: "24px",
     marginBottom: "50px",
+    marginTop: "24px",
   };
 
   const typographyStyle = {
@@ -23,7 +24,7 @@ const CourseSideBar = (props) => {
 
   return (
     <div style={searchResultsStyle}>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <Typography variant="body" style={typographyStyle}>
         {relatedCourses.length} Results
       </Typography>

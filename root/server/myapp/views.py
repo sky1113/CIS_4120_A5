@@ -104,10 +104,10 @@ class UserViewAPI(APIView):
 
 class ExternalDataView(APIView):
     permission_classes = [AllowAny]
-    def get(self, request, *args, **kwargs):
+    def get(self, request, subject_name):
         access_token = get_access_token()
         if access_token:
-            external_api_response = make_authenticated_request(access_token)
+            external_api_response = make_authenticated_request(access_token, subject_name)
             return Response(external_api_response, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Failed to obtain access token"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

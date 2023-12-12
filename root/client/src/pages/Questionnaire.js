@@ -4,9 +4,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 
-const Questionnaire = () => {
-  const [major, setMajor] = useState("");
-  const [minor, setMinor] = useState("");
+const Questionnaire = (props) => {
+  const { major, minor, onMajorChange, onMinorChange } = props;
 
   const containerStyle = {
     display: "flex",
@@ -30,14 +29,6 @@ const Questionnaire = () => {
     marginTop: "50px",
   };
 
-  const handleMajorChange = (event) => {
-    setMajor(event.target.value);
-  };
-
-  const handleMinorChange = (event) => {
-    setMinor(event.target.value);
-  };
-
   return (
     <div style={containerStyle}>
       <div>
@@ -49,7 +40,7 @@ const Questionnaire = () => {
             label="Major"
             variant="outlined"
             value={major}
-            onChange={handleMajorChange}
+            onChange={onMajorChange}
             style={{ width: "400px" }} // Adjust the width as needed
           />
         </div>
@@ -61,7 +52,7 @@ const Questionnaire = () => {
             label="Minor"
             variant="outlined"
             value={minor}
-            onChange={handleMinorChange}
+            onChange={onMinorChange}
             sx={{ width: "400px" }} // You can also use sx prop for custom styles
           />
         </div>

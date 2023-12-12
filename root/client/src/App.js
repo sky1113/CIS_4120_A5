@@ -9,7 +9,7 @@ import Search from "./pages/Search";
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Questionnaire from "./pages/Questionnaire"
+import Questionnaire from "./pages/Questionnaire";
 
 const theme = createTheme({
   typography: {
@@ -42,10 +42,21 @@ const bodyStyle = {
 export default function App() {
   const [selectedCourse, setSelectedCourse] = useState(null);
   const [relatedCourses, setRelatedCourses] = useState([]);
+  const [major, setMajor] = useState("");
+  const [minor, setMinor] = useState("");
 
   const handleCourseSelection = (course, relatedCoursesData) => {
+    console.log("Selected course:", course);
     setSelectedCourse(course);
     setRelatedCourses(relatedCoursesData);
+  };
+
+  const handleMajorChange = (event) => {
+    setMajor(event.target.value);
+  };
+
+  const handleMinorChange = (event) => {
+    setMinor(event.target.value);
   };
 
   return (
@@ -60,7 +71,13 @@ export default function App() {
               <Route path="/landing" element={<Landing />} />
               <Route
                 path="/search"
-                element={<Search onCourseSelect={handleCourseSelection} />}
+                element={
+                  <Search
+                    major={major}
+                    minor={minor}
+                    onCourseSelect={handleCourseSelection}
+                  />
+                }
               />
               <Route
                 path="/course-details/:courseCode"
@@ -74,7 +91,17 @@ export default function App() {
               />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/questionnaire" element={<Questionnaire />} />
+              <Route
+                path="/questionnaire"
+                element={
+                  <Questionnaire
+                    major={major}
+                    minor={minor}
+                    onMajorChange={handleMajorChange}
+                    onMinorChange={handleMinorChange}
+                  />
+                }
+              />
             </Routes>
           </div>
         </div>
