@@ -9,7 +9,7 @@ import Search from "./pages/Search";
 import Landing from "./pages/Landing";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Questionnaire from "./pages/Questionnaire"
+import Questionnaire from "./pages/Questionnaire";
 
 const theme = createTheme({
   typography: {
@@ -44,6 +44,7 @@ export default function App() {
   const [relatedCourses, setRelatedCourses] = useState([]);
 
   const handleCourseSelection = (course, relatedCoursesData) => {
+    console.log("Selected course:", course);
     setSelectedCourse(course);
     setRelatedCourses(relatedCoursesData);
   };

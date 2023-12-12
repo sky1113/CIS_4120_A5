@@ -4,43 +4,14 @@ import LecRecTable from "./LecRecTable";
 
 const CourseDescription = (props) => {
   const { selectedCourse } = props;
-
-  const dummyData = {
-    difficulty: "3.0",
-    workload: "3.0",
-    profRating: "3.0",
-    offeredIn: "Spring",
-    credits: "3",
-    syllabus: "doc",
-    website: "www.cis.com",
-    description: "Introduction to Computer Programming is the first course i",
-    prerequisites:
-      "Introduction to Computer Programming is the first course in our series introducing students to computer science. In this class you will learn.",
-    lectureTime: "MWF 12:00-12:59 PM",
-    sectionNumber: "001",
-    location: "McNeil 102",
-  };
-
-  const {
-    difficulty,
-    workload,
-    profRating,
-    offeredIn,
-    credits,
-    syllabus,
-    website,
-    description,
-    prerequisites,
-    lectureTime,
-    sectionNumber,
-    location,
-  } = dummyData;
+  console.log(selectedCourse);
 
   const courseDescriptionStyle = {
     display: "flex",
     flexDirection: "column",
     backgroundColor: "#FFF",
     alignItems: "center",
+    minHeight: "calc(100vh - 105px)",
   };
 
   const courseDescriptionContentStyle = {
@@ -124,10 +95,14 @@ const CourseDescription = (props) => {
       <div style={courseDescriptionContentStyle}>
         <div style={courseDescriptionTitleStyle}>
           <Typography variant="h4" style={titleStyle}>
-            {selectedCourse.courseCode}
+            {selectedCourse.course_department +
+              " " +
+              selectedCourse.course_number +
+              " " +
+              selectedCourse.section_number}
           </Typography>
           <Typography variant="h5" style={subtitleStyle}>
-            {selectedCourse.courseName}
+            {selectedCourse.course_title}
           </Typography>
         </div>
         {/* <div>course stats here</div> */}
@@ -136,32 +111,26 @@ const CourseDescription = (props) => {
             <div style={rowStyle}>
               <Typography style={labelStyle}>Enrolled</Typography>
               <Typography style={valueStyle}>
-                {selectedCourse.enrollment}
+                {selectedCourse.section_enrollment +
+                  "/" +
+                  selectedCourse.max_enrollment}
               </Typography>
             </div>
             <div style={rowStyle}>
               <Typography style={labelStyle}>Credits</Typography>
-              <Typography style={valueStyle}>{credits}</Typography>
-            </div>
-            <div style={rowStyle}>
-              <Typography style={labelStyle}>Offered In</Typography>
-              <Typography style={valueStyle}>{offeredIn}</Typography>
+              <Typography style={valueStyle}>
+                {selectedCourse.credits}
+              </Typography>
             </div>
           </div>
           <div style={columnStyle}>
             <div style={rowStyle}>
-              <Typography style={labelStyle}>Credits</Typography>
-              <Typography style={valueStyle}>{credits}</Typography>
-            </div>
-            <div style={rowStyle}>
               <Typography style={labelStyle}>Professor</Typography>
               <Typography style={valueStyle}>
-                {selectedCourse.professorName}
+                {selectedCourse.primary_instructor
+                  ? selectedCourse.primary_instructor
+                  : ""}
               </Typography>
-            </div>
-            <div style={rowStyle}>
-              <Typography style={labelStyle}>Syllabus</Typography>
-              <Typography style={valueStyle}>{syllabus}</Typography>
             </div>
           </div>
         </div>
@@ -170,19 +139,18 @@ const CourseDescription = (props) => {
             Description
           </Typography>
           <Typography variant="body1" style={textStyle}>
-            {description}
+            {selectedCourse.course_description}
           </Typography>
         </div>
-        <div style={textSectionStyle}>
+        {/* <div style={textSectionStyle}>
           <Typography variant="h6" style={textTitleStyle}>
             Prerequisites
           </Typography>
           <Typography variant="body1" style={textStyle}>
-            {prerequisites}
+            {}
           </Typography>
-        </div>
-        <LecRecTable />
-        <LecRecTable />
+        </div> */}
+        <LecRecTable meetings={selectedCourse.meetings} />
       </div>
     </div>
   );

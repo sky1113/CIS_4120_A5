@@ -6,7 +6,17 @@ import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function CourseCard(props) {
-  const { courseCode, courseName, professorName, enrollment, avgGrade } = props;
+  const {
+    course_department,
+    course_number,
+    course_title,
+    primary_instructor,
+    enrollment,
+    avgGrade,
+    section_number,
+  } = props;
+  const courseCode =
+    course_department + " " + course_number + " " + section_number;
 
   const cardStyle = {
     display: "flex",
@@ -41,17 +51,17 @@ export default function CourseCard(props) {
             {courseCode}
           </Typography>
           <Typography component="div" variant="subtitle1">
-            {courseName}
+            {course_title}
           </Typography>
           <div style={courseStatStyle}>
             <Typography component="div" variant="subtitle2">
-              {professorName}
+              {primary_instructor ? primary_instructor : ""}
             </Typography>
             <Typography component="div" variant="subtitle2">
-              {enrollment}
+              {}
             </Typography>
             <Typography component="div" variant="subtitle2">
-              {avgGrade}
+              {}
             </Typography>
           </div>
         </CardContent>

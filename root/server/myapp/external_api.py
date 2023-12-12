@@ -18,8 +18,8 @@ def get_access_token():
         # Handle error: unable to obtain token
         return None
     
-def make_authenticated_request(access_token):
-    api_url = 'https://3scale-public-prod-open-data.apps.k8s.upenn.edu/api/v1/course_info/KORN?page_number=1&number_of_results_per_page=1'
+def make_authenticated_request(access_token, subject_name):
+    api_url = f'https://3scale-public-prod-open-data.apps.k8s.upenn.edu/api/v1/course_section_search?activity=LEC&section_id={subject_name}&term=202410&page_number=1&number_of_results_per_page=12'
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
