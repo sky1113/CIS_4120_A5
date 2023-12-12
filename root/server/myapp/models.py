@@ -3,7 +3,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group, Permission
 
 class AppUserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, email, password=None, first_name=None, last_name=None):
         if not email:
             raise ValueError('An email is required.')
         if not password:
@@ -33,6 +33,8 @@ class AppUser(AbstractBaseUser,PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     date_joined = models.DateField(auto_now_add=True)
+    major = models.CharField(max_length=50, default='DefaultMajorValue')
+    minor = models.CharField(max_length=50, default='DefaultMinorValue')
 
     groups = models.ManyToManyField(Group, related_name='appuser_groups')
     user_permissions = models.ManyToManyField(Permission, related_name='appuser_permissions')

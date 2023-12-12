@@ -12,6 +12,11 @@ from django.contrib.auth import get_user_model
 from .utils import generate_access_token
 import jwt
 from .external_api import get_access_token, make_authenticated_request
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.views import View 
+import json
 
 class UserRegisterAPIView(APIView):
     serializer_class = UserRegisterSerializer
@@ -111,3 +116,17 @@ class ExternalDataView(APIView):
             return Response(external_api_response, status=status.HTTP_200_OK)
         else:
             return Response({"error": "Failed to obtain access token"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+
+class SaveMajorMinorView(View):
+    def post(self, request):
+        print("Endpoint reached")
+        data = json.loads(request.body.decode('utf-8'))
+        print("received data:",data)
+        major = data.get('major')
+        minor = data.get('minor')
+        user = request.user
+        user.major = major
+        user.minor = minor
+        user.save()
+        return JsonResponse({'message': 'Data saved successfully'})

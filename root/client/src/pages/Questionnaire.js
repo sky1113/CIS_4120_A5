@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
 
 const Questionnaire = () => {
   const [major, setMajor] = useState("");
   const [minor, setMinor] = useState("");
+  const navigate = useNavigate();
 
   const containerStyle = {
     display: "flex",
@@ -38,9 +40,23 @@ const Questionnaire = () => {
     setMinor(event.target.value);
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/api/save_major_minor",{major, minor,}
+      );
+      navigate("/search");
+    } catch (error) {
+      console.error("Error saving major and minor:", error.response);
+    }
+  };
+
   return (
     <div style={containerStyle}>
       <div>
+        <form onSubmit={handleSubmit}>
         <div style={inputContainerStyle}>
           <Typography variant="h6" style={{ marginBottom: "10px" }}>
             Input your Major
@@ -77,6 +93,7 @@ const Questionnaire = () => {
             </Button>
           </Link>
         </div>
+        </form>
       </div>
     </div>
   );
